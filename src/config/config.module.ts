@@ -8,12 +8,13 @@ import dbConfig from './loaders/database.config';
 
 // Validation
 import { validationSchema } from './schema';
+import googleOAuthConfig from './loaders/google-oauth.config';
 
 @Module({
   imports: [
     NestConfigModule.forRoot({
       ignoreEnvFile: false,
-      load: [appConfig, dbConfig],
+      load: [appConfig, dbConfig, googleOAuthConfig],
       validate: validationSchema.parse,
       envFilePath: '.env',
       isGlobal: true,

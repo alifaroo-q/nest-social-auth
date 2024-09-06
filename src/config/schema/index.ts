@@ -14,6 +14,10 @@ export const validationSchema = z.object({
   NODE_ENV: z.string().default('development'),
   PORT: z.coerce.number().default(3000),
 
+  // FRONTEND
+
+  FRONTEND_URL: z.string().default('http://localhost:5173'),
+
   // DATABASE
   POSTGRES_HOST: z.string().default('localhost'),
   POSTGRES_PORT: z.coerce.number().default(5432),
@@ -25,6 +29,11 @@ export const validationSchema = z.object({
   // JWT
   USER_SECRET_KEY: z.string().default('user_secret'),
   USER_EXPIRES_IN: z.string().default('1d'),
+
+  // Google OAuth
+  GOOGLE_CLIENT_ID: z.string(),
+  GOOGLE_CLIENT_SECRET: z.string(),
+  GOOGLE_CALLBACK_URL: z.string(),
 });
 
 export type Config = z.infer<typeof validationSchema>;
