@@ -29,4 +29,10 @@ export class AuthService {
     if (user) return user;
     return await this.userService.createNewUser(googleUser);
   }
+
+  async validateGithubUser(githubUser: CreateNewUserDto) {
+    const user = await this.userService.getUserByEmail(githubUser.email);
+    if (user) return user;
+    return await this.userService.createNewUser(githubUser);
+  }
 }

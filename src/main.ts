@@ -13,6 +13,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   await ConfigModule.envVariablesLoaded;
+
   await app.listen(process.env.PORT);
 }
 bootstrap();
