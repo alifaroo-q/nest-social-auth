@@ -21,7 +21,7 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
   }
 
   async validate(accessToken: string, _refreshToken: string, profile: Profile) {
-    const user = await this.authService.validateGithubUser({
+    const user = await this.authService.validateFacebookUser({
       email: profile.emails[0].value,
       first_name: profile.displayName.split(' ')[0] || '',
       last_name: profile.displayName.split(' ')[1] || '',

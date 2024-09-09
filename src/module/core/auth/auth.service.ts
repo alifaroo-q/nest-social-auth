@@ -35,4 +35,10 @@ export class AuthService {
     if (user) return user;
     return await this.userService.createNewUser(githubUser);
   }
+
+  async validateFacebookUser(facebookUser: CreateNewUserDto) {
+    const user = await this.userService.getUserByEmail(facebookUser.email);
+    if (user) return user;
+    return await this.userService.createNewUser(facebookUser);
+  }
 }

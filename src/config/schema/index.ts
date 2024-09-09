@@ -39,6 +39,11 @@ export const validationSchema = z.object({
   GITHUB_CLIENT_ID: z.string(),
   GITHUB_CLIENT_SECRET: z.string(),
   GITHUB_CALLBACK_URL: z.string(),
+
+  // Facebook OAuth
+  FACEBOOK_APP_ID: z.string(),
+  FACEBOOK_APP_SECRET: z.string(),
+  FACEBOOK_CALLBACK_URL: z.string(),
 });
 
 export type Config = z.infer<typeof validationSchema>;
