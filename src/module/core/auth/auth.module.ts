@@ -6,10 +6,11 @@ import { UserModule } from 'src/module/feature/users/user.module';
 import { JwtModule } from '../jwt/jwt.module';
 import { GoogleStrategy } from './strategy/google-auth.strategy';
 import { JwtStrategy } from './strategy/jwt-auth.strategy';
+import { GithubStrategy } from './strategy/github-auth.strategy';
 
 @Module({
   imports: [CustomConfigModule, UserModule, JwtModule],
   controllers: [AuthController],
-  providers: [AuthService, GoogleStrategy, JwtStrategy],
+  providers: [AuthService, GoogleStrategy, GithubStrategy, JwtStrategy],
 })
 export class AuthModule {}
